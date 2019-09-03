@@ -9,7 +9,8 @@ componentDidMount = async () => {
       'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
     })
   });
-  console.log(results);
+  const data = await results.json();
+  console.log(data);
 }
 
 render() {

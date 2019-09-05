@@ -1,0 +1,47 @@
+.STREAM__CONTAINER {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 15vw;
+}
+
+.STREAM__CARD {
+    flex: 1 0 auto;
+    max-width: 50%;
+    width: 19rem;
+    overflow: hidden;
+    padding-left: 10px;
+    margin: 10px 0;
+}
+  
+.STREAM__CARD h3 {
+    color: white;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+  
+.STREAM__CARD__BLOCK {
+    display: flex;
+    margin-top: 0.2rem;
+}
+  
+.STREAM__CARD__TEXT {
+    margin-left: 5px;
+    overflow: hidden;
+}
+  
+.STREAM__CARD__TEXT p {
+    font-size: 0.9rem;
+    color: #bdbdbd;
+    margin: 0.3rem 0;
+}
+
+@media (max-width: 550px) {
+    .STREAM__CARD {
+      max-width: 100%;
+      padding: 0;
+    }
+  }

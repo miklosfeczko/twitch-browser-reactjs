@@ -1,11 +1,45 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
-export default class TopGames extends Component {
-    render() {
-        return (
-            <div>
-                Hello from TopGames component!
-            </div>
+import './TopGames.css'
+
+class TopGames extends Component {
+state = {
+    TOPGAMES: []
+}
+      
+componentDidMount = async () => {
+    const results = await fetch(`https://api.twitch.tv/helix/games/top?first=100`, {
+        headers: new Headers({
+        'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
+        })
+    });
+    const data = await results.json();
+    console.log(data);
+    this.setState({ TOPGAMES: data.data })
+}
+
+render() {
+    return (
+        <div className="TOPGAME__CONTAINER">
+            {this.state.TOPGAMES && this.state.TOPGAMES.map((TOPGAME) => {
+                return (
+                    <div key={TOPGAME.id} className="TOPGAME__ITEM">
+                        <img 
+                        alt={TOPGAME.name}
+                        src={TOPGAME.box_art_url.replace('{width}', '272').replace('{height}', '380')}/>
+                        <Link to={{
+                            pathname: `/TOPGAMES/${TOPGAME.id}`,
+                            state: { id: TOPGAME.id }
+                        }}>
+                        <h3>{TOPGAME.name}</h3>
+                        </Link>
+                    </div>
+                )
+            })}
+        </div>
         )
     }
 }
+
+export default TopGames;

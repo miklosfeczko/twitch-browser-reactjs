@@ -15,7 +15,6 @@ componentDidMount = async () => {
         })
     });
     const data = await results.json();
-    console.log(data);
     this.setState({ TOPGAMES: data.data })
 }
 

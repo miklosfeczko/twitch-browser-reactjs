@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import {kFormatter} from '../../utility/utility'
+import {Link} from 'react-router-dom'
+
+import '../Streams/Streams.css'
 
 class GameStreams extends Component {
 state = {
@@ -7,7 +11,7 @@ state = {
 
 componentDidMount = async () => {
     const id = this.props.location.state.id;
-    const results = await fetch(`https://api.twitch.tv/helix/streams?game_id=${id}`, {
+    const results = await fetch(`https://api.twitch.tv/helix/streams?first=50&game_id=${id}`, {
         headers: new Headers({
         'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
         })
@@ -16,10 +20,28 @@ componentDidMount = async () => {
     console.log(data);
     this.setState({ GAMESTREAMS: data.data })
 }
+
     render() {
         return (
-            <div>
-                Test one.
+            <div className="STREAM__CONTAINER">
+               {this.state.GAMESTREAMS && this.state.GAMESTREAMS.map((GAMESTREAM) => {
+                   return (
+                       <div key={GAMESTREAM.id} className="STREAM__CARD">
+                           <img src={GAMESTREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} />
+                           <div className="STREAM__CARD__BLOCK">
+                           <div className="STREAM__CARD__TEXT">
+                           <Link to={{
+                               pathname: `/TOPGAMES/${this.props.location.state.id}/WHAT`,
+                               state: { name: GAMESTREAM.user_name }
+                           }}>
+                           <h3>{GAMESTREAM.title}</h3>
+                           </Link>
+                           <p>{GAMESTREAM.user_name} | {kFormatter(GAMESTREAM.viewer_count)} viewers</p>
+                           </div>
+                           </div>
+                       </div>
+                   )
+               })}
             </div>
         )
     }

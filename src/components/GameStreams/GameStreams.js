@@ -27,7 +27,10 @@ componentDidMount = async () => {
                {this.state.GAMESTREAMS && this.state.GAMESTREAMS.map((GAMESTREAM) => {
                    return (
                        <div key={GAMESTREAM.id} className="STREAM__CARD">
-                           <img src={GAMESTREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} />
+                           <img 
+                           alt={GAMESTREAM.title}
+                           src={GAMESTREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} 
+                           />
                            <div className="STREAM__CARD__BLOCK">
                            <div className="STREAM__CARD__TEXT">
                            <Link to={{

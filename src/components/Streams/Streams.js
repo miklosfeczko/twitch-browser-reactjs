@@ -26,7 +26,10 @@ render() {
            {this.state.STREAMS && this.state.STREAMS.map((STREAM) => {
             return (
                 <div key={STREAM.id} className="STREAM__CARD" >
-                    <img src={STREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} />
+                    <img 
+                    alt={STREAM.title}
+                    src={STREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} 
+                    />
                     <div className="STREAM__CARD__BLOCK">
                     <div className="STREAM__CARD__TEXT">
                     <Link to={{ 

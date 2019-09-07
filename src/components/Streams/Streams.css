@@ -39,6 +39,10 @@
     margin: 0.3rem 0;
 }
 
+.STREAM__LINK:visited, .STREAM__LINK:active, .STREAM__LINK:link {
+    text-decoration: none;
+}
+
 @media (max-width: 550px) {
     .STREAM__CARD {
       max-width: 100%;

@@ -24,13 +24,16 @@ render() {
             {this.state.TOPGAMES && this.state.TOPGAMES.map((TOPGAME) => {
                 return (
                     <div key={TOPGAME.id} className="TOPGAME__ITEM">
-                        <img 
-                        alt={TOPGAME.name}
-                        src={TOPGAME.box_art_url.replace('{width}', '272').replace('{height}', '380')}/>
-                        <Link to={{
+                        <Link 
+                            className="STREAM__LINK"
+                            to={{
                             pathname: `/TOPGAMES/${TOPGAME.id}`,
                             state: { id: TOPGAME.id }
                         }}>
+                        <img 
+                        alt={TOPGAME.name}
+                        src={TOPGAME.box_art_url.replace('{width}', '272').replace('{height}', '380')}/>
+                        
                         <h3>{TOPGAME.name}</h3>
                         </Link>
                     </div>

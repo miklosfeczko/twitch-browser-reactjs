@@ -26,21 +26,23 @@ render() {
            {this.state.STREAMS && this.state.STREAMS.map((STREAM) => {
             return (
                 <div key={STREAM.id} className="STREAM__CARD" >
+                    <Link 
+                         className="STREAM__LINK"
+                         to={{ 
+                         pathname: `/STREAMS/WHAT`,
+                         state: { name: STREAM.user_name }
+                    }}>
                     <img 
                     alt={STREAM.title}
                     src={STREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} 
                     />
                     <div className="STREAM__CARD__BLOCK">
-                    <div className="STREAM__CARD__TEXT">
-                    <Link to={{ 
-                         pathname: `/STREAMS/WHAT`,
-                         state: { name: STREAM.user_name }
-                    }}>
-                    <h3>{STREAM.title}</h3>
-                    </Link>
+                    <div className="STREAM__CARD__TEXT">                 
+                    <h3>{STREAM.title}</h3>           
                     <p>{STREAM.user_name} | {kFormatter(STREAM.viewer_count)} viewers</p> 
+                    </div>     
                     </div>
-                    </div>
+                    </Link>
                 </div>
             )
         })}

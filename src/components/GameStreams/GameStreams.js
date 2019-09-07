@@ -27,21 +27,25 @@ componentDidMount = async () => {
                {this.state.GAMESTREAMS && this.state.GAMESTREAMS.map((GAMESTREAM) => {
                    return (
                        <div key={GAMESTREAM.id} className="STREAM__CARD">
+                           <Link 
+                               className="STREAM__LINK"
+                               to={{
+                               pathname: `/TOPGAMES/${this.props.location.state.id}/WHAT`,
+                               state: { name: GAMESTREAM.user_name }
+                           }}>
                            <img 
                            alt={GAMESTREAM.title}
                            src={GAMESTREAM.thumbnail_url.replace('{width}', '320').replace('{height}', '180')} 
                            />
                            <div className="STREAM__CARD__BLOCK">
                            <div className="STREAM__CARD__TEXT">
-                           <Link to={{
-                               pathname: `/TOPGAMES/${this.props.location.state.id}/WHAT`,
-                               state: { name: GAMESTREAM.user_name }
-                           }}>
+                           
                            <h3>{GAMESTREAM.title}</h3>
-                           </Link>
+                          
                            <p>{GAMESTREAM.user_name} | {kFormatter(GAMESTREAM.viewer_count)} viewers</p>
                            </div>
                            </div>
+                           </Link>
                        </div>
                    )
                })}

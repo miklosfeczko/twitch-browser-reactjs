@@ -13,26 +13,18 @@ class SideBar extends Component {
                 
                 <ul className="sidebar-links">
                     <li>
-                        <NavLink 
-                        to="/" 
-                        style={{ textDecoration: 'none', backgroundColor: 'transparent' }}>
-                        <h3
-                        style={{ textDecoration: 'none', backgroundColor: 'transparent', fontWeight: '200' }}  
-                        ><i className="fas fa-home" /> <span className="hide">Home Page</span></h3>
+                        <NavLink exact to="/" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>
+                        <i className="fas fa-home" /> Home Page         
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/TOPGAMES" style={{ textDecoration: 'none', backgroundColor: 'transparent' }}>
-                        <h3
-                        style={{ textDecoration: 'none', backgroundColor: 'transparent', fontWeight: '200' }}  
-                        className="sidebar-links"><i className="fas fa-gamepad" /> <span className="hide">Top Games</span></h3>
+                        <NavLink exact to="/TOPGAMES" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>                   
+                        <i className="fas fa-gamepad" /> Top Games
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/STREAMS" style={{ textDecoration: 'none', backgroundColor: 'transparent' }}>
-                        <h3
-                         style={{ textDecoration: 'none', backgroundColor: 'transparent', fontWeight: '200' }} 
-                        className="sidebar-links"><i className="fas fa-video" /> <span className="hide">Streams</span></h3>
+                        <NavLink exact to="/STREAMS" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>               
+                        <i className="fas fa-video" /> Streams
                         </NavLink>
                     </li>
                 </ul>

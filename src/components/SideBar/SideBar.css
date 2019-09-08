@@ -21,28 +21,28 @@
   background-color: transparent;
 }
 
-.sidebar-links:hover {
-  color: #eff2ff;
-}
-
 .sidebar-links li {
   color: #c5c8d4;
   padding: 15px;
   background-color: transparent;
 }
 
-
 .sidebar-links li:visited {
   color: #c5c8d4;
   text-decoration: none;
 }
 
-.sidebar-links a:hover {
-  color: #b9c1b6;
-}
-
 .hide {
   background-color: transparent;
+}
+
+.hide:hover {
+  color: #f6fff2;
+}
+
+
+.SIDEBAR__BTN__HOVER:hover {
+  color: #f6fff2;
 }
 
 .LOGO {

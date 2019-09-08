@@ -14,17 +14,17 @@ class SideBar extends Component {
                 <ul className="sidebar-links">
                     <li>
                         <NavLink exact to="/" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>
-                        <i className="fas fa-home" /> Home Page         
+                        <div className="SIDEBAR__BTN__HOVER" style={{ backgroundColor: 'transparent'}}><i style={{ backgroundColor: 'transparent'}} className="fas fa-home" />  <span className="hide"> Home Page</span> </div>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/TOPGAMES" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>                   
-                        <i className="fas fa-gamepad" /> Top Games
+                        <div className="SIDEBAR__BTN__HOVER" style={{ backgroundColor: 'transparent'}}><i style={{ backgroundColor: 'transparent'}} className="fas fa-gamepad" />  <span className="hide"> Top Games</span> </div>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/STREAMS" style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: 'bold'}} activeStyle={{color: 'white', textDecoration: 'none'}}>               
-                        <i className="fas fa-video" /> Streams
+                        <div className="SIDEBAR__BTN__HOVER" style={{ backgroundColor: 'transparent'}}><i style={{ backgroundColor: 'transparent'}} className="fas fa-video" />  <span className="hide"> Streams</span> </div>
                         </NavLink>
                     </li>
                 </ul>

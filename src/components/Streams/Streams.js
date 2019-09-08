@@ -20,7 +20,19 @@ componentDidMount = async () => {
     this.setState({ STREAMS: data.data })
 }
 
+
 render() {
+    let content;
+    if (this.state.STREAMS.length > 0) {
+        content = <div></div>
+    } else {
+        content = <div className="loading-indicator">
+        <div className="circle"/> 
+        <div className="circle circle-2" />
+        <div className="circle circle-3" />
+      </div>
+    }
+
     return (
         <div className="STREAM__CONTAINER">
            {this.state.STREAMS && this.state.STREAMS.map((STREAM) => {
@@ -45,10 +57,10 @@ render() {
                     </Link>
                 </div>
             )
-        })}
+        })}{content}
         </div>
     )
-}
+} 
 }
 
 export default Streams;

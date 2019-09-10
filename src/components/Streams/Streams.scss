@@ -12,6 +12,16 @@
     overflow: hidden;
     padding-left: 10px;
     margin: 10px 0;
+
+    &:hover {
+        transform: scale(1.04);
+        transition: 0.1s;
+    }
+}
+
+
+.STREAM__CARD img {
+    border-radius: 6px; 
 }
   
 .STREAM__CARD h3 {
@@ -31,14 +41,13 @@
 .STREAM__CARD__TEXT {
     margin-left: 5px;
     overflow: hidden;
+    p {
+        font-size: 0.9rem;
+        color: #bdbdbd;
+        margin: 0.3rem 0;
+    }
 }
   
-.STREAM__CARD__TEXT p {
-    font-size: 0.9rem;
-    color: #bdbdbd;
-    margin: 0.3rem 0;
-}
-
 .STREAM__LINK:visited, .STREAM__LINK:active, .STREAM__LINK:link {
     text-decoration: none;
 }

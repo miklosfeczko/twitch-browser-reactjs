@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
-import './TopGames.css'
+import './TopGames.scss'
 
 class TopGames extends Component {
 state = {
@@ -19,6 +19,17 @@ componentDidMount = async () => {
 }
 
 render() {
+    let content;
+    if (this.state.TOPGAMES.length > 0) {
+        content = <div></div>
+    } else {
+        content = <div className="loading-indicator">
+        <div className="circle"/> 
+        <div className="circle circle-2" />
+        <div className="circle circle-3" />
+      </div>
+    }
+
     return (
         <div className="TOPGAME__CONTAINER">
             {this.state.TOPGAMES && this.state.TOPGAMES.map((TOPGAME) => {
@@ -38,7 +49,7 @@ render() {
                         </Link>
                     </div>
                 )
-            })}
+            })}{content}
         </div>
         )
     }

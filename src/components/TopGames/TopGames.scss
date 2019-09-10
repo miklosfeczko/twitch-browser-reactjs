@@ -10,19 +10,20 @@
     max-width: 50%;
     margin: 10px 0;
     transition: 0.1s;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px; 
+    }
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.1s;
+      h3 {
+        transition: 0.1s;
+        color: #a991d4;
+      }
+    }
 }
-
-.TOPGAME__ITEM:hover { 
-  transform: scale(1.1);
-  transition: 0.1s;
-}
-
-.TOPGAME__ITEM img { 
-    width: 100%;
-    height: auto;
-    border-radius: 6px; 
-}
-
 
 h3 {
   font-size: 1rem;

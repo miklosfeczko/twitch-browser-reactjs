@@ -18,10 +18,10 @@ render() {
         <SideBar />
         <Switch>
         <Route exact path="/STREAMS" component={Streams} />
-        <Route exact path="/STREAMS/WHAT" component={TestComp} />
+        <Route exact path="/STREAMS/:name" component={TestComp} />
         <Route exact path="/TOPGAMES" component={TopGames} />
         <Route exact path="/TOPGAMES/:id" component={GameStreams} />
-        <Route exact path="/TOPGAMES/:id/WHAT" component={TestComp} />
+        <Route exact path="/TOPGAMES/:id/:name" component={TestComp} />
         </Switch>
       </Router>
     </div>

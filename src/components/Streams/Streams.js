@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {kFormatter} from '../../utility/utility'
 import {Link} from 'react-router-dom'
 
-import './Streams.css'
+import './Streams.scss'
 
 class Streams extends Component {
 state = {
@@ -41,7 +41,7 @@ render() {
                     <Link 
                          className="STREAM__LINK"
                          to={{ 
-                         pathname: `/STREAMS/WHAT`,
+                         pathname: `/STREAMS/${STREAM.user_name}`,
                          state: { name: STREAM.user_name }
                     }}>
                     <img 

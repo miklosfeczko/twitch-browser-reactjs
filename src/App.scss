@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     background-color: #0e0d0d;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -38,7 +40,7 @@
   .loading-indicator {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 57%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -50,11 +52,11 @@
       position: absolute;
       left: 0;
       top: 0;
-      border-radius: 50%;
+      border-radius: 6px;
       width: 100%;
       height: 100%;
       opacity: 0.5;
-      background-color: #9a5b45;
+      background-color: #a991d4;
       animation: loadingIndicator 2.25s infinite ease-in-out;
     }
   

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {kFormatter} from '../../utility/utility'
 import {Link} from 'react-router-dom'
 
-import '../Streams/Streams.css'
+import '../Streams/Streams.scss'
 
 class GameStreams extends Component {
 state = {
@@ -22,6 +22,16 @@ componentDidMount = async () => {
 }
 
     render() {
+        let content;
+    if (this.state.GAMESTREAMS.length > 0) {
+        content = <div></div>
+    } else {
+        content = <div className="loading-indicator">
+        <div className="circle"/> 
+        <div className="circle circle-2" />
+        <div className="circle circle-3" />
+      </div>
+    }
         return (
             <div className="STREAM__CONTAINER">
                {this.state.GAMESTREAMS && this.state.GAMESTREAMS.map((GAMESTREAM) => {
@@ -30,7 +40,7 @@ componentDidMount = async () => {
                            <Link 
                                className="STREAM__LINK"
                                to={{
-                               pathname: `/TOPGAMES/${this.props.location.state.id}/WHAT`,
+                               pathname: `/TOPGAMES/${this.props.location.state.id}/${GAMESTREAM.user_name}`,
                                state: { name: GAMESTREAM.user_name }
                            }}>
                            <img 
@@ -48,7 +58,7 @@ componentDidMount = async () => {
                            </Link>
                        </div>
                    )
-               })}
+               })}{content}
             </div>
         )
     }

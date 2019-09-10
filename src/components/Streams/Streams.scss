@@ -16,6 +16,9 @@
     &:hover {
         transform: scale(1.04);
         transition: 0.1s;
+        h3 {
+            color: #a991d4;
+        }
     }
 }
 

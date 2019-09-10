@@ -49,38 +49,38 @@ toggleChat = () => {
                  </div>
     
                 
-              </header>
+                </header>
               
-              <iframe
-              className="VIDEO__FRAME"
-              src={`https://player.twitch.tv/?channel=${this.state.name}&muted=true`}
-              title={`featured streamer ${this.state.name}`}
-              frameBorder="0"
-              allowFullScreen
-            />
-            </div>
+                  <iframe
+                    className="VIDEO__FRAME"
+                    src={`https://player.twitch.tv/?channel=${this.state.name}&muted=true`}
+                    title={`featured streamer ${this.state.name}`}
+                    frameBorder="0"
+                    allowFullScreen
+                  />
+                </div>
 
-          <div className="CHAT__CONTAINER">
-          <button onClick={this.toggleChat}>
-            { !this.state.isToggleOn ? "Hide Chat" : "Show Chat" }
-          </button>
+                <div className="CHAT__CONTAINER">
+                  <button onClick={this.toggleChat}>
+                  { !this.state.isToggleOn ? "Hide Chat" : "Show Chat" }
+                  </button>
  
-          { !this.state.isToggleOn && (
-          <iframe
-          frameBorder="0"
-          title={`featured streamer ${this.state.name} chat`}
-          scrolling="no"
-          id="chat_embed"
-          src={`https://www.twitch.tv/embed/${this.state.name}/chat`}
-          />
-          )}
-        </div>
-        </section>
-        )})}
-        </div>
+                  { !this.state.isToggleOn && (
+                     <iframe
+                      frameBorder="0"
+                      title={`featured streamer ${this.state.name} chat`}
+                      scrolling="no"
+                      id="chat_embed"
+                      src={`https://www.twitch.tv/embed/${this.state.name}/chat`}
+                      />
+                  )}
+                </div>
+              </section>
+              )})}
+            </div>
         
-        )
-    }
+            )
+        }
 }
 
 export default TestComp;

@@ -9,6 +9,7 @@
     background-color: #6441a5;
     border: #6441a5;
     color: white;
+    cursor: pointer;
   }
   .CHAT__CONTAINER {
     flex-basis: 30%;
@@ -44,12 +45,12 @@
     border-right: 1px solid #3d3d3d;
     height: 100%;
     padding: 0 10px;
-    margin: 0 4px;
+    margin: 0 5px;
   }
 }
 
 .HEADER__BLOCK * { /* targeting all elements inside this block */
-  margin: 0 8px;
+  margin: 0 5px;
 }
 
 @media (max-width: 979px) {

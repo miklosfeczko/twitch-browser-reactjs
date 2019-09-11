@@ -1,0 +1,29 @@
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.iframe-container {
+    margin-left: 15vw;
+    overflow: hidden;
+    padding-top: 40.25%;
+    position: relative;
+    width: 84%;
+   
+  }
+  
+  .iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  @media (max-width: 979px) {
+    .iframe-container {
+      width: 100%;
+       min-height: 100px;
+    }
+  }

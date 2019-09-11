@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './TestComp.scss'
+import './Embed.scss'
 
 class TestComp extends Component {
 constructor(props) {

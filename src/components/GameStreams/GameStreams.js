@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import {kFormatter} from '../../utility/utility'
 import {Link} from 'react-router-dom'
 
@@ -35,6 +36,7 @@ componentDidMount = async () => {
         return (
             <div className="STREAM__CONTAINER">
                {this.state.GAMESTREAMS && this.state.GAMESTREAMS.map((GAMESTREAM) => {
+                   
                    return (
                        <div key={GAMESTREAM.id} className="STREAM__CARD">
                            <Link 
@@ -49,7 +51,6 @@ componentDidMount = async () => {
                            />
                            <div className="STREAM__CARD__BLOCK">
                            <div className="STREAM__CARD__TEXT">
-                           
                            <h3>{GAMESTREAM.title}</h3>
                           
                            <p>{GAMESTREAM.user_name} | {kFormatter(GAMESTREAM.viewer_count)} viewers</p>

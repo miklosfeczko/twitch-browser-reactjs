@@ -1,9 +1,23 @@
 import React, { Component } from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
 import './SideBar.scss'
 
 class SideBar extends Component {
+state = {
+    FEATURED_STREAMS: []
+}
+
+componentDidMount = async () => {
+    const results = await fetch(`https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/featured`, {
+        headers: new Headers({
+        'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
+         })
+    });
+    const data = await results.json();
+    this.setState({FEATURED_STREAMS: data.featured })
+}
+
     render() {
         return (
             <div className="SIDEBAR">
@@ -33,6 +47,37 @@ class SideBar extends Component {
                         </a>
                     </li>
                 </ul>
+                
+                <section className="SIDEBAR__FEATURED__STREAMS">
+                    <h3
+                    style={{ textAlign: "center", color: "#c5c8d4", margin: '30px' }} 
+                    className="HIDE">
+                    
+                    Featured Streams
+                    </h3>
+                { this.state.FEATURED_STREAMS && this.state.FEATURED_STREAMS.map((FEATURED_STREAM) => {
+                    return (
+                        <Link 
+                        key={FEATURED_STREAM.stream.channel._id}
+                        style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: '200'}} 
+                        className="STREAM__LINK"
+                        to={{pathname: `/STREAMS/${FEATURED_STREAM.stream.channel.name}`,
+                        state: { name: FEATURED_STREAM.stream.channel.name }
+                        }}>
+                        <img 
+                        alt={FEATURED_STREAM.stream.channel.name}
+                        style={{ width: "30px", borderRadius: "50%" }}
+                        src={FEATURED_STREAM.stream.channel.logo}/>
+                        <p className="HIDE__TITLE">{FEATURED_STREAM.stream.channel.name}
+                        <br />
+                        <span style={{ color: "#c5c8d4" }}>
+                        {FEATURED_STREAM.stream.channel.game.length < 15 ? FEATURED_STREAM.stream.channel.game : `${FEATURED_STREAM.stream.channel.game.substring(0 , 15)}...`}
+                        </span>
+                        </p>
+                        </Link>
+                    )
+                })}
+                </section>
             </div>
         )
     }

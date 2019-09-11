@@ -16,7 +16,6 @@ componentDidMount = async () => {
         })
     });
     const data = await results.json();
-    console.log(data);
     this.setState({ STREAMS: data.data })
 }
 

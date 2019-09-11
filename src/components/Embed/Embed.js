@@ -21,7 +21,6 @@ componentDidMount = async () => {
   });
   const data = await results.json();
   this.setState({ USER: data.data })
-  console.log(this.state.USER);
 }
 
 

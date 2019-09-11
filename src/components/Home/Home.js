@@ -17,27 +17,27 @@ componentDidMount = async () => {
         })
     });
     const data = await results.json();
-    console.log(data);
-    
     this.setState({ STREAMS: data.data })
 }
 
 render() {
-    console.log(this.state.STREAMS, 'WHATEVER')
+   
+    if (this.state.STREAMS.length > 0) {
+
     return (
         <React.Fragment>
         <div className="video">
         <div className="iframe-container">
         <iframe
             height="500px"
-            src={`https://player.twitch.tv/?channel=loltyler1&muted=true`}
-            title={`featured streamer ${this.state.name}`}
+            src={`https://player.twitch.tv/?channel=${this.state.STREAMS[0].user_name}&muted=true`}
+            title={`featured streamer ${this.state.STREAMS[0].user_name}`}
             frameBorder="0"
             allowFullScreen
         />
         </div>
         </div>
-
+        
         <div className="STREAM__CONTAINER">
            {this.state.STREAMS && this.state.STREAMS.map((STREAM) => {
             return (
@@ -64,6 +64,12 @@ render() {
         })}
         </div>
         </React.Fragment>
+        )} else return (
+            <div className="loading-indicator">
+        <div className="circle"/> 
+        <div className="circle circle-2" />
+        <div className="circle circle-3" />
+      </div>
         )
         
     }

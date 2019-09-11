@@ -76,7 +76,7 @@ componentDidMount = async () => {
                         </p>
                         </Link>
                     )
-                })}
+                })} 
                 </section>
             </div>
         )

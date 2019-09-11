@@ -1,10 +1,10 @@
-.video {
+.VIDEO__CONTAINER {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.iframe-container {
+.IFRAME__CONTAINER {
     margin-left: 15vw;
     overflow: hidden;
     padding-top: 40.25%;
@@ -12,7 +12,7 @@
     width: 71%;
   }
   
-  .iframe-container iframe {
+  .IFRAME__CONTAINER iframe {
     border: 0;
     height: 100%;
     left: 0;
@@ -21,8 +21,8 @@
     width: 100%;
   }
   @media (max-width: 979px) {
-    .iframe-container {
-      width: 100%;
-       min-height: 100px;
+    .IFRAME__CONTAINER {
+      width: 78%;
+      min-height: 100px;
     }
   }

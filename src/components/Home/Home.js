@@ -26,8 +26,8 @@ render() {
 
     return (
         <React.Fragment>
-        <div className="video">
-        <div className="iframe-container">
+        <div className="VIDEO__CONTAINER">
+        <div className="IFRAME__CONTAINER">
         <iframe
             height="500px"
             src={`https://player.twitch.tv/?channel=${this.state.STREAMS[0].user_name}&muted=true`}

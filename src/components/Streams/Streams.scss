@@ -63,3 +63,30 @@
       text-align: center;
     }
   }
+
+@media (max-width: 370px) {
+    .STREAM__CARD {
+        width: 18rem;
+        img {
+            border-radius: 0;
+            margin: 10px;
+        }
+        h3 {
+            margin: 10px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .STREAM__CARD {
+        width: 15rem;
+        margin: 10px;
+        img {
+            margin: 10px;
+            border-radius: 0;
+        }
+        h3 {
+            margin: 10px;
+        }
+    }
+}

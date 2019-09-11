@@ -24,5 +24,8 @@
     .IFRAME__CONTAINER {
       width: 78%;
       min-height: 100px;
+      .VIDEO__FRAME {
+        height: 70%;
+      }
     }
   }

@@ -29,7 +29,7 @@ render() {
         <div className="VIDEO__CONTAINER">
         <div className="IFRAME__CONTAINER">
         <iframe
-            height="500px"
+            className="VIDEO__FRAME"
             src={`https://player.twitch.tv/?channel=${this.state.STREAMS[0].user_name}&muted=true`}
             title={`featured streamer ${this.state.STREAMS[0].user_name}`}
             frameBorder="0"

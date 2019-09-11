@@ -5,7 +5,8 @@ import './SideBar.scss'
 
 class SideBar extends Component {
 state = {
-    FEATURED_STREAMS: []
+    FEATURED_STREAMS: [],
+    CHANNEL: false
 }
 
 componentDidMount = async () => {
@@ -18,7 +19,12 @@ componentDidMount = async () => {
     this.setState({FEATURED_STREAMS: data.featured })
 }
 
+setToOpposite = () => {
+    this.setState({ CHANNEL: !this.state.CHANNEL })
+}
+
     render() {
+         
         return (
             <div className="SIDEBAR">
                 <h1 className="LOGO">
@@ -52,16 +58,17 @@ componentDidMount = async () => {
                     <h3
                     style={{ textAlign: "center", color: "#c5c8d4", margin: '30px' }} 
                     className="HIDE">
-                    
                     Featured Streams
                     </h3>
                 { this.state.FEATURED_STREAMS && this.state.FEATURED_STREAMS.map((FEATURED_STREAM) => {
+                    
                     return (
                         <Link 
+                        onClick={this.setToOpposite}
                         key={FEATURED_STREAM.stream.channel._id}
                         style={{color: '#c5c8d4', textDecoration: 'none', backgroundColor: 'transparent', fontWeight: '200'}} 
                         className="STREAM__LINK"
-                        to={{pathname: `/STREAMS/${FEATURED_STREAM.stream.channel.name}`,
+                        to={{pathname: `/${this.state.CHANNEL}/STREAMS/${FEATURED_STREAM.stream.channel.name}`,
                         state: { name: FEATURED_STREAM.stream.channel.name }
                         }}>
                         <img 
@@ -70,7 +77,7 @@ componentDidMount = async () => {
                         src={FEATURED_STREAM.stream.channel.logo}/>
                         <p className="HIDE__TITLE">{FEATURED_STREAM.stream.channel.name}
                         <br />
-                        <span style={{ color: "#c5c8d4" }}>
+                        <span style={{ color: "#c5c8d4", backgroundColor: 'transparent' }}>
                         {FEATURED_STREAM.stream.channel.game.length < 15 ? FEATURED_STREAM.stream.channel.game : `${FEATURED_STREAM.stream.channel.game.substring(0 , 15)}...`}
                         </span>
                         </p>

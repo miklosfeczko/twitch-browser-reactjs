@@ -6,7 +6,8 @@ import './SideBar.scss'
 class SideBar extends Component {
 state = {
     FEATURED_STREAMS: [],
-    CHANNEL: false
+    CHANNEL: false,
+    loading: true
 }
 
 componentDidMount = async () => {
@@ -16,12 +17,21 @@ componentDidMount = async () => {
          })
     });
     const data = await results.json();
-    this.setState({FEATURED_STREAMS: data.featured })
-    console.log(this.state.FEATURED_STREAMS.length)
+    this.setState({
+        FEATURED_STREAMS: data.featured
+    })
 }
 
 setToOpposite = () => {
     this.setState({ CHANNEL: !this.state.CHANNEL })
+}
+
+handleLoader () {
+    this.timeout = setTimeout(() => this.setState({ loading: false }), 2000);
+}
+
+componentWillUnmount() {
+    clearTimeout(this.timeout)
 }
 
     render() {
@@ -62,7 +72,7 @@ setToOpposite = () => {
                     Featured Streams
                     </h3>
                 { this.state.FEATURED_STREAMS && this.state.FEATURED_STREAMS.map((FEATURED_STREAM) => {
-                    if (this.state.FEATURED_STREAMS) {
+                    if (this.state.FEATURED_STREAMS && !this.state.loading) {
                     return (
                         <Link 
                         onClick={this.setToOpposite}
@@ -85,10 +95,13 @@ setToOpposite = () => {
                         </Link>
                     ) 
                     } else return (
-                        <div className="loading-indicator">
-                        <div className="circle"/> 
-                        <div className="circle circle-2" />
-                        <div className="circle circle-3" />
+                        <div>
+                        {this.handleLoader()}
+                        <div className="loading-indicator-sb">
+                        <div className="circle-sb"/> 
+                        <div className="circle-sb circle-2-sb" />
+                        <div className="circle-sb circle-3-sb" />
+                        </div>
                         </div>
                     )
                 })} 

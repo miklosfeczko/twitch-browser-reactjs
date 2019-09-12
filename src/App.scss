@@ -68,3 +68,46 @@
       animation-delay: -1.5s;
     }
   }
+
+
+// Loading SIDEBAR
+@keyframes loadingIndicator-sb {
+  0%, 100% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
+
+.loading-indicator-sb {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+
+  .circle-sb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #a991d4;
+    animation: loadingIndicator-sb 2.25s infinite ease-in-out;
+  }
+
+  .circle-2-sb {
+    animation-delay: -.75s;
+  }
+
+  .circle-3-sb {
+    animation-delay: -1.5s;
+  }
+}

@@ -6,8 +6,6 @@
 ![Thumbnail](tbr-screen-2.jpg)
 ![Thumbnail](tbr-screen-3.jpg)
 
-This application was made to browse wallpapers and images using the Reddit API. The app looks for available images in the thread and lists them.
-
 This application was designed and built to browse and watch live Twitch streams. The app lists the streams based upon their view number counts.  
 
 ## How to Use

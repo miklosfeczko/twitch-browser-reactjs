@@ -10,13 +10,14 @@ state = {
 }
 
 componentDidMount = async () => {
-    const results = await fetch(`https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/featured`, {
+    const results = await fetch(`https://api.twitch.tv/kraken/streams/featured`, {
         headers: new Headers({
         'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
          })
     });
     const data = await results.json();
     this.setState({FEATURED_STREAMS: data.featured })
+    console.log(this.state.FEATURED_STREAMS.length)
 }
 
 setToOpposite = () => {
@@ -61,7 +62,7 @@ setToOpposite = () => {
                     Featured Streams
                     </h3>
                 { this.state.FEATURED_STREAMS && this.state.FEATURED_STREAMS.map((FEATURED_STREAM) => {
-                    
+                    if (this.state.FEATURED_STREAMS) {
                     return (
                         <Link 
                         onClick={this.setToOpposite}
@@ -82,6 +83,13 @@ setToOpposite = () => {
                         </span>
                         </p>
                         </Link>
+                    ) 
+                    } else return (
+                        <div className="loading-indicator">
+                        <div className="circle"/> 
+                        <div className="circle circle-2" />
+                        <div className="circle circle-3" />
+                        </div>
                     )
                 })} 
                 </section>

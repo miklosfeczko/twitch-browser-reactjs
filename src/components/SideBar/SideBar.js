@@ -11,9 +11,10 @@ state = {
 }
 
 componentDidMount = async () => {
-    const results = await fetch(`https://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/streams/featured`, {
+    const results = await fetch(`https://api.twitch.tv/kraken/streams/featured`, {
         headers: new Headers({
-        'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz'
+        'Client-ID' : 'nj66gbe8njzhncv9x2ru7azb1g57iz',
+        Accept: "application/vnd.twitchtv.v5+json"
          })
     });
     const data = await results.json();

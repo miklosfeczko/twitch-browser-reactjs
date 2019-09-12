@@ -10,9 +10,9 @@
     max-width: 50%;
     width: 19rem;
     overflow: hidden;
-    padding-left: 10px;
-    margin: 10px 0;
-    margin-right: 10px;
+    padding-left: 0px;
+    margin: 10px;
+    border-radius: 6px; 
 
     &:hover {
         transform: scale(1.04);
@@ -21,36 +21,31 @@
             color: #a991d4;
         }
     }
-}
+    h3 {
+        color: white;
+        font-size: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 0;
+    }
 
+    &__BLOCK {
+        display: flex;
+        margin-top: 0.2rem;
+    }
 
-.STREAM__CARD img {
-    border-radius: 6px; 
-}
-  
-.STREAM__CARD h3 {
-    color: white;
-    font-size: 1rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin: 0;
-}
-  
-.STREAM__CARD__BLOCK {
-    display: flex;
-    margin-top: 0.2rem;
-}
-  
-.STREAM__CARD__TEXT {
-    margin-left: 5px;
-    overflow: hidden;
-    p {
-        font-size: 0.9rem;
-        color: #bdbdbd;
-        margin: 0.3rem 0;
+    &__TEXT {
+        margin-left: 5px;
+        overflow: hidden;
+        p {
+            font-size: 0.9rem;
+            color: #bdbdbd;
+            margin: 0.3rem 0;  
+        }
     }
 }
+
   
 .STREAM__LINK:visited, .STREAM__LINK:active, .STREAM__LINK:link {
     text-decoration: none;

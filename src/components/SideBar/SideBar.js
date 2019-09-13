@@ -67,11 +67,13 @@ componentWillUnmount() {
                 </ul>
                 
                 <section className="SIDEBAR__FEATURED__STREAMS">
+                    <div className="SIDEBAR__LOADER__MARGIN" style={{ backgroundColor: 'transparent'}}>
                     <h3
                     style={{ textAlign: "center", color: "#c5c8d4", margin: '30px' }} 
                     className="HIDE">
                     Featured Streams
                     </h3>
+                    </div>
                 { this.state.FEATURED_STREAMS && this.state.FEATURED_STREAMS.map((FEATURED_STREAM) => {
                     if (this.state.FEATURED_STREAMS && !this.state.loading) {
                     return (
@@ -96,10 +98,10 @@ componentWillUnmount() {
                         </Link>
                     ) 
                     } else return (
-                        <div>
+                        <div style={{backgroundColor: 'transparent'}} >
                         {this.handleLoader()}
-                        <div className="loading-indicator-sb">
-                        <div className="circle-sb"/> 
+                        <div className="loading-indicator-sb" style={{backgroundColor: 'transparent'}}>
+                        <div className="circle-sb"/>
                         <div className="circle-sb circle-2-sb" />
                         <div className="circle-sb circle-3-sb" />
                         </div>
